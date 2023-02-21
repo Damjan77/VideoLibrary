@@ -1,0 +1,34 @@
+﻿@model AV_MVC1.Models.Client
+@{
+    ViewBag.Title = "NewClient";
+}
+
+<h2>Add a new Customer</h2>
+
+@using (Html.BeginForm("InsertNewClient", "Movies"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.name)
+        @Html.TextBoxFor(m => m.name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.name)
+
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.age)
+        @Html.TextBoxFor(m => m.age, new { @class = "form-control", type = "number" })
+        @Html.ValidationMessageFor(m => m.age)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.address)
+        @Html.TextBoxFor(m => m.address, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.address)
+
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.phone)
+        @Html.TextBoxFor(m => m.phone, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.phone)
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Save</button>
+}

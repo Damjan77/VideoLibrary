@@ -1,0 +1,22 @@
+﻿@model List<AV_MVC1.Models.Client>
+@{
+    ViewBag.Title = "GetAllClients";
+}
+
+<h3>Clients:</h3>
+<ul>
+    @{
+        int i = 0;
+        foreach (var client in Model)
+        {
+            <li>
+                <h4>
+                    <span>@client.name, address: @client.address</span>           
+                    @Html.ActionLink("Edit", "EditClient", new { id = i }) |
+                    @Html.ActionLink("Delete", "DeleteClient", new { id = i })
+                </h4>
+            </li>
+            i++;
+        }
+    }
+</ul>

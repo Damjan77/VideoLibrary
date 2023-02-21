@@ -1,0 +1,27 @@
+﻿@model AV_MVC1.Models.MovieRentals
+
+@{
+    ViewBag.Title = "Random";
+}
+
+<h2>@Model.movie.name</h2>
+<h3>Download from: <a href="@Model.movie.downloadURL">this link</a></h3>
+<h5>Rating: @Model.movie.rating</h5>
+<img src="@Model.movie.imageURL" />
+<h2>Clients:</h2>
+<ul>
+
+
+    @{
+        int i = 0;
+        foreach (var client in Model.clients)
+        {
+            <li>
+                  <a href="ShowClient/@i">@client.name, @client.MovieCard</a>
+            </li>
+            i++;
+        }
+    }
+
+
+</ul>
